@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React, { useRef, useState } from "react";
-import { alignElement } from "./AlignDom";
+import { alignElement } from "utils-dom";
 import { useControll, useOutsideClick, usePortal, useTranstion, useTriggerChain, TriggerAction, TriggerWrap } from "utils-hooks";
 import { TooltipProps } from "./interface";
 import placements from "./placements";
