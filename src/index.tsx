@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React, { useRef, useState } from "react";
-import { alignElement } from "utils-dom";
+import { alignElement } from "./AlignDom";
 import { useControll, useOutsideClick, usePortal, useTranstion, useTriggerChain, TriggerAction, TriggerWrap } from "utils-hooks";
 import { TooltipProps } from "./interface";
 import placements from "./placements";
@@ -44,14 +44,16 @@ export function Tooltip(props: TooltipProps) {
             return;
         }
 
-        const config = Object.assign({}, placements[placement], alignOption);
-        const info = alignElement(ref.current, triggerRef.current, config);
-        const isflip = info.flipX || info.flipY;
+        if (_visible) {
+            const config = Object.assign({}, placements[placement], alignOption);
+            const info = alignElement(ref.current, triggerRef.current, config);
+            const isflip = info.flipX || info.flipY;
 
-        if (isflip && !flip) {
-            setFlip(config.flip);
-        } else if (!isflip && flip) {
-            setFlip(null);
+            if (isflip && !flip) {
+                setFlip(config.flip);
+            } else if (!isflip && flip) {
+                setFlip(null);
+            }
         }
 
         if (!isControll) {

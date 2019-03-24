@@ -1,6 +1,7 @@
 import { TriggerAction } from "utils-hooks";
 import { IDomAlignOption } from "utils-dom";
 export type GetDrawerContainerFuc = () => HTMLElement;
+export type PlacementType = "left" | "right" | "top" | "bottom" | "leftTop" | "leftBottom" | "rightTop" | "rightBottom" | "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
 
 export interface TooltipProps {
     /**
@@ -40,7 +41,7 @@ export interface TooltipProps {
     /**
      * 显示方向
      */
-    placement?: "left" | "right" | "top" | "bottom" | "leftTop" | "leftBottom" | "rightTop" | "rightBottom" | "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
+    placement?: PlacementType;
     /**
      * 改变是否可视事件
      */
