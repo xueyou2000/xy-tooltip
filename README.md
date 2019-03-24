@@ -13,7 +13,7 @@
 [download-image]: https://img.shields.io/npm/dm/xy-tooltip.svg?style=flat-square
 [download-url]: https://npmjs.org/package/xy-tooltip
 
-> 基于`React Hooks` + `typescript`的基础组件
+> 基于`React Hooks` + `typescript`的`Tooltip`组件, 支持 12 个方向
 
 ## 安装
 
