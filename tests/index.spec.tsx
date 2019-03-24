@@ -1,11 +1,24 @@
 import React from "react";
-import { render } from "react-testing-library";
-import Component from "../src";
+import { render, fireEvent } from "react-testing-library";
+import Tooltip from "../src";
 
-describe("component", () => {
+describe("Tooltip", () => {
     test("render", () => {
-        const wrapper = render(<Component />);
-        const div = wrapper.getByText("Hello");
-        expect(div.textContent).toBe("Hello");
+        const container = document.createElement("div");
+        document.body.append(container);
+
+        const wrapper = render(
+            <Tooltip trigger={["click"]} overlay={<span>这是一个按钮</span>} getContainer={() => container}>
+                <button>按钮</button>
+            </Tooltip>,
+            { container }
+        );
+
+        const tooltip = container.querySelector(".xy-tooltip");
+        expect(tooltip.classList.contains("xy-tooltip-open")).toBeFalsy();
+        fireEvent.click(wrapper.getByText("按钮"));
+        expect(tooltip.classList.contains("xy-tooltip-open")).toBeTruthy();
+        fireEvent.click(wrapper.getByText("按钮"));
+        expect(tooltip.classList.contains("xy-tooltip-open")).toBeFalsy();
     });
 });
