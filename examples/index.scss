@@ -1,0 +1,74 @@
+.sb-show-main {
+    background: aqua;
+    padding: 0;
+}
+
+.demo-1 {
+    display: table-row;
+}
+.box {
+    display: table-cell;
+    height: 60px;
+    width: 80px;
+    text-align: center;
+    background: rgb(246, 246, 246);
+    vertical-align: middle;
+    box-sizing: border-box;
+    border: 5px solid white;
+}
+.margin {
+    margin: 180px;
+}
+
+.block {
+    width: 600px;
+    height: 900px;
+    background: pink;
+    margin: 30px;
+    position: relative;
+}
+
+.target {
+    width: 92px;
+    height: 87px;
+    background-color: brown;
+    box-shadow: 10px;
+    position: absolute;
+    left: 120px;
+    top: 150px;
+}
+
+.source {
+    position: absolute;
+    width: 92px;
+    height: 87px;
+    background-color: seagreen;
+    box-shadow: 10px;
+    top: 10px;
+    right: 10px;
+}
+
+.block2 {
+    width: 92px;
+    height: 87px;
+    background-color: brown;
+    text-align: center;
+    line-height: 87px;
+    position: absolute;
+    left: 320px;
+    top: 20px;
+
+    &[data-active="false"] {
+        &::after {
+            content: "未激活";
+            color: #eaeded;
+        }
+    }
+
+    &[data-active="true"] {
+        &::after {
+            content: "激活了";
+            color: seagreen;
+        }
+    }
+}

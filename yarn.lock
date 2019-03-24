@@ -3311,9 +3311,9 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
-  resolved "http://registry.npm.taobao.org/classnames/download/classnames-2.2.6.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fclassnames%2Fdownload%2Fclassnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+  resolved "http://registry.npm.taobao.org/classnames/download/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha1-Q5Nb/90pHzJtrQogUwmzjQD2UM4=
 
 clean-css@4.2.x:
@@ -10770,6 +10770,23 @@ utila@^0.4.0, utila@~0.4:
   version "0.4.0"
   resolved "http://registry.npm.taobao.org/utila/download/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
   integrity sha1-ihagXURWV6Oupe7MWxKk+lN5dyw=
+
+utils-dom@0.0.46:
+  version "0.0.46"
+  resolved "http://registry.npm.taobao.org/utils-dom/download/utils-dom-0.0.46.tgz#87b0593e1554773769be4096af6112b45aff2cc3"
+  integrity sha1-h7BZPhVUdzdpvkCWr2EStFr/LMM=
+
+utils-dom@0.0.49:
+  version "0.0.49"
+  resolved "http://registry.npm.taobao.org/utils-dom/download/utils-dom-0.0.49.tgz#e13b526295e259d31f56f69f631f381ac59ce28d"
+  integrity sha1-4TtSYpXiWdMfVvafYx84GsWc4o0=
+
+utils-hooks@0.0.50:
+  version "0.0.50"
+  resolved "http://registry.npm.taobao.org/utils-hooks/download/utils-hooks-0.0.50.tgz#7e1fd0d3dfc1d8cb1e18a6ae3b6f2a3498ebe6eb"
+  integrity sha1-fh/Q09/B2MseGKauO28qNJjr5us=
+  dependencies:
+    utils-dom "0.0.46"
 
 utils-merge@1.0.1:
   version "1.0.1"
