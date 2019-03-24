@@ -164,7 +164,7 @@ export function alignElement(sourceNode: HTMLElement, targetNode: HTMLElement | 
     let alignPoint: Point = { x: targetPoint.x - sourcePoint.x, y: targetPoint.y - sourcePoint.y };
 
     function accOffset(point: Point, allowX = true, allowY = true) {
-        var p;
+        var p: Point;
         // 累加上Source偏移量
         p = alignPoint = accPoint(point, calcOffset(sourceRegion, option.offset, allowX, allowY));
         // 累加Target偏移量

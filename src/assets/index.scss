@@ -1,7 +1,6 @@
 $tooltipWarpPrefixCls: "xy-tooltip";
 
 .#{$tooltipWarpPrefixCls} {
-    background: white;
     box-sizing: border-box;
     z-index: 1050;
     line-height: 1.5;
@@ -10,6 +9,7 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     padding: 1px;
     animation: 0.3s rcToolTipZoomOut;
     position: absolute;
+    color: #fff;
 
     .#{$tooltipWarpPrefixCls}-arrow,
     .#{$tooltipWarpPrefixCls}-arrow-inner {
@@ -22,13 +22,15 @@ $tooltipWarpPrefixCls: "xy-tooltip";
 
     .#{$tooltipWarpPrefixCls}-inner {
         padding: 8px 10px;
-        color: #333333;
         text-align: left;
         text-decoration: none;
-        background-color: #ffffff;
-        border-radius: 3px;
-        min-height: 34px;
-        border: 1px solid #b1b1b1;
+        border-radius: 4px;
+        min-width: 30px;
+        min-height: 32px;
+        text-decoration: none;
+        word-wrap: break-word;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        background-color: rgba(0, 0, 0, 0.75);
     }
 
     &.#{$tooltipWarpPrefixCls}-state-entering,
@@ -49,7 +51,7 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     }
     &.#{$tooltipWarpPrefixCls}-state-exited {
         visibility: hidden;
-        animation-play-state: paused;
+        transform: scale(1, 1);
     }
 }
 
@@ -64,7 +66,7 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     bottom: -5px;
     margin-left: -6px;
     border-width: 6px 6px 0;
-    border-top-color: #b1b1b1;
+    border-top-color: rgba(0, 0, 0, 0.75);
 }
 .#{$tooltipWarpPrefixCls}-top .#{$tooltipWarpPrefixCls}-arrow-inner,
 .#{$tooltipWarpPrefixCls}-topLeft .#{$tooltipWarpPrefixCls}-arrow-inner,
@@ -72,7 +74,7 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     bottom: 1px;
     margin-left: -6px;
     border-width: 6px 6px 0;
-    border-top-color: #ffffff;
+    border-top-color: rgba(255, 247, 247, 0.19);
 }
 .#{$tooltipWarpPrefixCls}-top .#{$tooltipWarpPrefixCls}-arrow {
     left: 50%;
@@ -89,7 +91,7 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     left: -5px;
     margin-top: -6px;
     border-width: 6px 6px 6px 0;
-    border-right-color: #b1b1b1;
+    border-right-color: rgba(0, 0, 0, 0.75);
 }
 .#{$tooltipWarpPrefixCls}-right .#{$tooltipWarpPrefixCls}-arrow-inner,
 .#{$tooltipWarpPrefixCls}-rightTop .#{$tooltipWarpPrefixCls}-arrow-inner,
@@ -97,7 +99,7 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     left: 1px;
     margin-top: -6px;
     border-width: 6px 6px 6px 0;
-    border-right-color: #ffffff;
+    border-right-color: rgba(255, 247, 247, 0.19);
 }
 .#{$tooltipWarpPrefixCls}-right .#{$tooltipWarpPrefixCls}-arrow {
     top: 50%;
@@ -115,7 +117,7 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     right: -5px;
     margin-top: -6px;
     border-width: 6px 0 6px 6px;
-    border-left-color: #b1b1b1;
+    border-left-color: rgba(0, 0, 0, 0.75);
 }
 .#{$tooltipWarpPrefixCls}-left .#{$tooltipWarpPrefixCls}-arrow-inner,
 .#{$tooltipWarpPrefixCls}-leftTop .#{$tooltipWarpPrefixCls}-arrow-inner,
@@ -123,7 +125,7 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     right: 1px;
     margin-top: -6px;
     border-width: 6px 0 6px 6px;
-    border-left-color: #ffffff;
+    border-left-color: rgba(255, 247, 247, 0.19);
 }
 .#{$tooltipWarpPrefixCls}-left .#{$tooltipWarpPrefixCls}-arrow {
     top: 50%;
@@ -141,7 +143,7 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     top: -5px;
     margin-left: -6px;
     border-width: 0 6px 6px;
-    border-bottom-color: #b1b1b1;
+    border-bottom-color: rgba(0, 0, 0, 0.75);
 }
 .#{$tooltipWarpPrefixCls}-bottom .#{$tooltipWarpPrefixCls}-arrow-inner,
 .#{$tooltipWarpPrefixCls}-bottomLeft .#{$tooltipWarpPrefixCls}-arrow-inner,
@@ -149,7 +151,7 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     top: 1px;
     margin-left: -6px;
     border-width: 0 6px 6px;
-    border-bottom-color: #ffffff;
+    border-bottom-color: rgba(255, 247, 247, 0.19);
 }
 .#{$tooltipWarpPrefixCls}-bottom .#{$tooltipWarpPrefixCls}-arrow {
     left: 50%;

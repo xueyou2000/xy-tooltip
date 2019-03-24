@@ -56,7 +56,7 @@
         "react": "^16.8.2",
         "react-dom": "^16.8.2",
         "utils-dom": "0.0.49",
-        "utils-hooks": "0.0.50"
+        "utils-hooks": "0.0.51"
     },
     "repository": {
         "type": "git",

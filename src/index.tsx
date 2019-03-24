@@ -1,12 +1,10 @@
 import classNames from "classnames";
-import React, { useRef, useState, useEffect } from "react";
-import { useControll, usePortal, useTranstion } from "utils-hooks";
-import { TriggerAction, TriggerWrap, useTrigger } from "./useTrigger";
+import React, { useRef, useState } from "react";
+import { alignElement } from "utils-dom";
+import { useControll, useOutsideClick, usePortal, useTranstion, useTriggerChain } from "utils-hooks";
 import { TooltipProps } from "./interface";
 import placements from "./placements";
-import { listenHover } from "./utils-dom";
-import { alignElement } from "./AlignDom";
-import { useOutsideClick } from "./useOutsideClick";
+import { TriggerAction, TriggerWrap } from "./useTrigger";
 
 export function Tooltip(props: TooltipProps) {
     const { prefixCls = "xy-tooltip", className, style, getContainer, placement = "top", children, overlay, onChange, alignOption, stretch, mouseDelay = 100, trigger = ["hover" as TriggerAction] } = props;
@@ -21,47 +19,57 @@ export function Tooltip(props: TooltipProps) {
         width: stretch && triggerRef.current ? (triggerRef.current as HTMLElement).clientWidth : null
     };
 
-    const triggerActived = useRef(false);
-    const hideActived = useRef(false);
-    const timeHandle = useRef(null);
-    const setActived = useTrigger(
+    const setActived = useTriggerChain(
         triggerRef,
-        trigger,
-        trigger,
+        ref,
         (act, actived, event) => {
-            triggerActived.current = actived;
-            if (actived) {
-                doSetVisible(actived);
-            } else if (act === "hover") {
-                // hover时候离开, 等mouseDelay秒, 再判断
-                clearTimeout(timeHandle.current);
-                timeHandle.current = setTimeout(() => {
-                    if (!hideActived.current) {
-                        doSetVisible(actived);
-                    }
-                }, mouseDelay);
-            } else {
-                if (!hideActived.current) {
-                    doSetVisible(actived);
-                }
-            }
+            doSetVisible(actived);
         },
+        { trigger, mouseDelay },
         [flip, visible]
     );
 
-    useEffect(() => {
-        return listenHover(ref.current, (hovered) => {
-            hideActived.current = hovered;
-            if (!hovered) {
-                clearTimeout(timeHandle.current);
-                timeHandle.current = setTimeout(() => {
-                    if (!triggerActived.current) {
-                        doSetVisible(hovered);
-                    }
-                }, mouseDelay);
-            }
-        });
-    }, [ref.current, visible]);
+    // const triggerActived = useRef(false);
+    // const hideActived = useRef(false);
+    // const timeHandle = useRef(null);
+    // const setActived = useTrigger(
+    //     triggerRef,
+    //     trigger,
+    //     trigger,
+    //     (act, actived, event) => {
+    //         triggerActived.current = actived;
+    //         if (actived) {
+    //             doSetVisible(actived);
+    //         } else if (act === "hover") {
+    //             // hover时候离开, 等mouseDelay秒, 再判断
+    //             clearTimeout(timeHandle.current);
+    //             timeHandle.current = setTimeout(() => {
+    //                 if (!hideActived.current) {
+    //                     doSetVisible(actived);
+    //                 }
+    //             }, mouseDelay);
+    //         } else {
+    //             if (!hideActived.current) {
+    //                 doSetVisible(actived);
+    //             }
+    //         }
+    //     },
+    //     [flip, visible]
+    // );
+
+    // useEffect(() => {
+    //     return listenHover(ref.current, (hovered) => {
+    //         hideActived.current = hovered;
+    //         if (!hovered) {
+    //             clearTimeout(timeHandle.current);
+    //             timeHandle.current = setTimeout(() => {
+    //                 if (!triggerActived.current) {
+    //                     doSetVisible(hovered);
+    //                 }
+    //             }, mouseDelay);
+    //         }
+    //     });
+    // }, [ref.current, visible]);
 
     useOutsideClick(
         [ref.current, triggerRef.current],
