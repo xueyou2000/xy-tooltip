@@ -1,7 +1,22 @@
 import { TriggerAction } from "utils-hooks";
-import { IDomAlignOption } from "utils-dom";
+import { DomAlignOption } from "utils-dom/es/AlignDom/interface";
 export type GetDrawerContainerFuc = () => HTMLElement;
 export type PlacementType = "left" | "right" | "top" | "bottom" | "leftTop" | "leftBottom" | "rightTop" | "rightBottom" | "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
+
+export interface FlipClassName {
+    /**
+     * x轴反转样式类名
+     */
+    flipX: string;
+    /**
+     * y轴反转样式类名
+     */
+    flipY: string;
+    /**
+     * x,y全反转样式类名
+     */
+    flipAll: string;
+}
 
 export interface TooltipProps {
     /**
@@ -62,5 +77,5 @@ export interface TooltipProps {
     /**
      * 对齐选项
      */
-    alignOption?: IDomAlignOption;
+    alignOption?: DomAlignOption;
 }

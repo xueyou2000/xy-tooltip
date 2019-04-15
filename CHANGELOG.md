@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.7 (Mon Apr 15 2019)
+
+-   更新`AlignDom`依赖版本, 优化反转逻辑
+
 ## 0.0.6 (Sun Mar 24 2019)
 
 -   修复 AlignDom 对齐逻辑

@@ -46,12 +46,15 @@ export function Tooltip(props: TooltipProps) {
 
         if (_visible) {
             const config = Object.assign({}, placements[placement], alignOption);
-            const info = alignElement(ref.current, triggerRef.current, config);
-            const isflip = info.flipX || info.flipY;
+            const revise = alignElement(ref.current, triggerRef.current, config);
 
-            if (isflip && !flip) {
-                setFlip(config.flip);
-            } else if (!isflip && flip) {
+            if (revise.x && !revise.y) {
+                setFlip(config.flipX);
+            } else if (!revise.x && revise.y) {
+                setFlip(config.flipY);
+            } else if (revise.x && revise.y) {
+                setFlip(config.flipAll);
+            } else {
                 setFlip(null);
             }
         }
