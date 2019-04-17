@@ -6,8 +6,8 @@ import { TooltipProps } from "./interface";
 import placements from "./placements";
 
 export function Tooltip(props: TooltipProps) {
-    const { prefixCls = "xy-tooltip", className, style, getContainer, placement = "top", children, overlay, onChange, alignOption, stretch, mouseDelay = 100, trigger = ["hover" as TriggerAction] } = props;
-    const [renderPortal] = usePortal(getContainer);
+    const { prefixCls = "xy-tooltip", className, popupClassName, style, getContainer, placement = "top", children, overlay, onChange, alignOption, stretch, mouseDelay = 100, trigger = ["hover" as TriggerAction] } = props;
+    const [renderPortal] = usePortal(popupClassName, getContainer);
     const [visible, setVisible, isControll] = useControll(props, "visible", "defaultVisible", false);
     const [flip, setFlip] = useState<string>(null);
     const [ref, state] = useTranstion(visible, true);

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.71 (Wed Apr 17 2019)
+
+-   增加`popupClassName`属性
+
 ## 0.0.7 (Mon Apr 15 2019)
 
 -   更新`AlignDom`依赖版本, 优化反转逻辑

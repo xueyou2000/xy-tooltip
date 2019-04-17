@@ -54,6 +54,10 @@ export interface TooltipProps {
      */
     overlay?: React.ReactNode;
     /**
+     * 弹出内容类名
+     */
+    popupClassName?: string;
+    /**
      * 显示方向
      */
     placement?: PlacementType;
