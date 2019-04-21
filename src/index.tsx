@@ -10,12 +10,12 @@ export function Tooltip(props: TooltipProps) {
     const [renderPortal] = usePortal(popupClassName, getContainer);
     const [visible, setVisible, isControll] = useControll(props, "visible", "defaultVisible", false);
     const [flip, setFlip] = useState<string>(null);
-    const [ref, state] = useTranstion(visible, true);
+    const [ref, state] = useTranstion(visible);
     const triggerRef = useRef();
     const opening = state.indexOf("en") !== -1;
     const classString = classNames(prefixCls, className, `${prefixCls}-${flip || placement}`, `${prefixCls}-state-${state}`, { [`${prefixCls}-open`]: opening });
     const style1: React.CSSProperties = {
-        width: stretch && triggerRef.current ? (triggerRef.current as HTMLElement).clientWidth : null
+        width: stretch && triggerRef.current ? (triggerRef.current as HTMLElement).clientWidth : null,
     };
 
     const setActived = useTriggerChain(
@@ -25,7 +25,7 @@ export function Tooltip(props: TooltipProps) {
             doSetVisible(actived);
         },
         { trigger, mouseDelay },
-        [flip, visible]
+        [flip, visible],
     );
 
     useOutsideClick(
@@ -36,7 +36,7 @@ export function Tooltip(props: TooltipProps) {
                 setActived(false);
             }
         },
-        [visible]
+        [visible],
     );
 
     function doSetVisible(_visible: boolean) {
@@ -76,7 +76,7 @@ export function Tooltip(props: TooltipProps) {
                         <div className={`${prefixCls}-arrow-inner`} />
                     </div>
                     <div className={`${prefixCls}-inner`}>{overlay}</div>
-                </div>
+                </div>,
             )}
         </React.Fragment>
     );

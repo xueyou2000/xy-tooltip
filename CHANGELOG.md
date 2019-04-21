@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.72 (Sun Apr 21 2019)
+
+-   修复第一次过度动画问题
+
 ## 0.0.71 (Wed Apr 17 2019)
 
 -   增加`popupClassName`属性
