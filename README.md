@@ -25,10 +25,10 @@
 
 ```sh
 # npm
-npm install --save xy-tooltip
+npm install --save xy-tooltip utils-dom utils-hooks classnames
 
 # yarn
-yarn add xy-tooltip
+yarn add xy-tooltip utils-dom utils-hooks classnames
 ```
 
 ## 使用
