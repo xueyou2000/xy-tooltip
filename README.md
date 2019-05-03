@@ -1,37 +1,25 @@
-# xy-tooltip
-
----
-
-[![NPM version][npm-image]][npm-url]
-[![node version][node-image]][node-url]
-[![npm download][download-image]][download-url]
-
-[npm-image]: http://img.shields.io/npm/v/xy-tooltip.svg?style=flat-square
-[npm-url]: http://npmjs.org/package/xy-tooltip
-[node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
-[node-url]: http://nodejs.org/download/
-[download-image]: https://img.shields.io/npm/dm/xy-tooltip.svg?style=flat-square
-[download-url]: https://npmjs.org/package/xy-tooltip
-
-> 基于`React Hooks` + `typescript`的`Tooltip`组件, 支持 12 个方向
-
-## 安装
-
-[![xy-tooltip](https://nodei.co/npm/xy-tooltip.png)](https://npmjs.org/package/xy-tooltip)
-
 | ![IE](https://github.com/alrra/browser-logos/blob/master/src/edge/edge_48x48.png?raw=true) | ![Chrome](https://github.com/alrra/browser-logos/blob/master/src/chrome/chrome_48x48.png?raw=true) | ![Firefox](https://github.com/alrra/browser-logos/blob/master/src/firefox/firefox_48x48.png?raw=true) | ![Opera](https://github.com/alrra/browser-logos/blob/master/src/opera/opera_48x48.png?raw=true) | ![Safari](https://github.com/alrra/browser-logos/blob/master/src/safari/safari_48x48.png?raw=true) |
 | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | IE 10+ ✔                                                                                   | Chrome 31.0+ ✔                                                                                     | Firefox 31.0+ ✔                                                                                       | Opera 30.0+ ✔                                                                                   | Safari 7.0+ ✔                                                                                      |
 
-```sh
-# npm
-npm install --save xy-tooltip utils-dom utils-hooks classnames
+![NPM version](http://img.shields.io/npm/v/xy-tooltip.svg?style=flat-square)
+![node version](https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square)
+![npm download](https://img.shields.io/npm/dm/xy-tooltip.svg?style=flat-square)
 
+[![xy-tooltip](https://nodei.co/npm/xy-tooltip.png)](https://npmjs.org/package/xy-tooltip)
+
+# xy-tooltip
+
+提示组件
+
+## 安装
+
+```bash
 # yarn
 yarn add xy-tooltip utils-dom utils-hooks classnames
 ```
 
-## 使用
+## 使用例子
 
 ```tsx
 import React from "react";
@@ -41,9 +29,33 @@ ReactDOM.render(
     <Tooltip overlay={<span>Tips: 这是一个按钮</span>}>
         <button>按钮</button>
     </Tooltip>,
-    container
+    container,
 );
 ```
+
+## API
+
+| 属性           | 说明                   | 类型                       | 默认值    |
+| -------------- | ---------------------- | -------------------------- | --------- |
+| visible        | 是否可视               | boolean                    | 无        |
+| defaultVisible | 默认是否可视           | boolean                    | 无        |
+| children       | 包裹元素               | React.ReactNode            | 无        |
+| overlay        | 漂浮提示内容           | React.ReactNode            | 无        |
+| popupClassName | 弹出内容类名           | string                     | 无        |
+| placement      | 显示方向               | PlacementType              | 无        |
+| onChange       | 改变是否可视事件       | (visible: boolean) => void | 无        |
+| trigger        | 触发方式               | TriggerAction[]            | ['hover'] |
+| mouseDelay     | 鼠标事件判定延迟       | number                     | 300       |
+| stretch        | 是否宽度与目标宽度对齐 | boolean                    | 无        |
+| alignOption    | 对齐选项               | DomAlignOption             | 无        |
+
+### PlacementType
+
+> "left" | "right" | "top" | "bottom" | "leftTop" | "leftBottom" | "rightTop" | "rightBottom" | "topLeft" | "topRight" | "bottomLeft" | "bottomRight"
+
+### TriggerAction
+
+> "hover" | "click" | "focus" | "contextMenu"
 
 ## 开发
 

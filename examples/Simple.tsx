@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Tooltip } from "../src";
+import "../src/assets/index";
 import "./index.scss";
 
 function Mytext(props: { text: string }) {
@@ -15,8 +16,7 @@ function Demo(props: { children?: React.ReactNode }) {
 
 export default function() {
     return (
-        <div className="margin">
-            <h1>12种方向</h1>
+        <div>
             <div className="demo-1">
                 <Tooltip overlay={<p className="tip">这是一段 Left 提示...</p>} placement="left" trigger={["hover"]}>
                     <div className="box">Left</div>

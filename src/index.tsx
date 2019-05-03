@@ -11,7 +11,7 @@ export function Tooltip(props: TooltipProps) {
     const [visible, setVisible, isControll] = useControll(props, "visible", "defaultVisible", false);
     const [flip, setFlip] = useState<string>(null);
     const [ref, state] = useTranstion(visible);
-    const triggerRef = useRef();
+    const triggerRef = useRef(null);
     const opening = state.indexOf("en") !== -1;
     const classString = classNames(prefixCls, className, `${prefixCls}-${flip || placement}`, `${prefixCls}-state-${state}`, { [`${prefixCls}-open`]: opening });
     const style1: React.CSSProperties = {
