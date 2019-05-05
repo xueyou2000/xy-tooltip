@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Tooltip } from "../src";
-import "../src/assets/index";
 import "./index.scss";
 
 export default function() {
