@@ -42,6 +42,7 @@ ReactDOM.render(
 | children         | 包裹元素                 | React.ReactNode            | 无        |
 | overlay          | 漂浮提示内容             | React.ReactNode            | 无        |
 | popupClassName   | 弹出内容类名             | string                     | 无        |
+| offsetSize       | 箭头偏移距离             | number                     | 6         |
 | placement        | 显示方向                 | PlacementType              | 无        |
 | onChange         | 改变是否可视事件         | (visible: boolean) => void | 无        |
 | trigger          | 触发方式                 | TriggerAction[]            | ['hover'] |

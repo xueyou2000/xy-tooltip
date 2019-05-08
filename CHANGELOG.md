@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.2 (Wed May 08 2019)
+
+-   修复`contentClickHide`的含义反了
+-   增加 `offsetSize` 箭头偏移尺寸
+
 ## 0.1.1 (Wed May 08 2019)
 
 -   增加 `contentClickHide` 属性, 控制点击弹出内容是否关闭

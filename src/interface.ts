@@ -32,6 +32,11 @@ export interface TooltipProps {
      */
     style?: React.CSSProperties;
     /**
+     * 箭头偏移距离
+     * @description 默认6
+     */
+    offsetSize?: number;
+    /**
      * 是否可视
      */
     visible?: boolean;
@@ -63,7 +68,7 @@ export interface TooltipProps {
     placement?: PlacementType;
     /**
      * 包裹元素点击是否触发隐藏
-     * @description 默认true
+     * @description 默认false
      */
     contentClickHide?: boolean;
     /**

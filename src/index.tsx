@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import { alignElement } from "utils-dom";
 import { useControll, useOutsideClick, usePortal, useTranstion, useTriggerChain, TriggerAction, TriggerWrap } from "utils-hooks";
 import { TooltipProps } from "./interface";
-import placements from "./placements";
+import { getPlacements } from "./placements";
 
 export function Tooltip(props: TooltipProps) {
     const {
@@ -15,8 +15,9 @@ export function Tooltip(props: TooltipProps) {
         placement = "top",
         children,
         overlay,
+        offsetSize = 6,
         onChange,
-        contentClickHide = true,
+        contentClickHide = false,
         alignOption,
         stretch,
         mouseDelay = 100,
@@ -44,7 +45,7 @@ export function Tooltip(props: TooltipProps) {
     );
 
     useOutsideClick(
-        contentClickHide ? [ref.current, triggerRef.current] : [triggerRef.current],
+        contentClickHide ? [triggerRef.current] : [ref.current, triggerRef.current],
         () => {
             if (visible) {
                 doSetVisible(false);
@@ -60,7 +61,7 @@ export function Tooltip(props: TooltipProps) {
         }
 
         if (_visible) {
-            const config = Object.assign({}, placements[placement], alignOption);
+            const config = Object.assign({}, getPlacements(offsetSize)[placement], alignOption);
             const revise = alignElement(ref.current, triggerRef.current, config);
 
             if (revise.x && !revise.y) {
