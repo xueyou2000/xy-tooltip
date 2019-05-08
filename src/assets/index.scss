@@ -85,10 +85,10 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     left: 50%;
 }
 .#{$tooltipWarpPrefixCls}-topLeft .#{$tooltipWarpPrefixCls}-arrow {
-    left: 15%;
+    left: 25%;
 }
 .#{$tooltipWarpPrefixCls}-topRight .#{$tooltipWarpPrefixCls}-arrow {
-    right: 15%;
+    right: 18%;
 }
 .#{$tooltipWarpPrefixCls}-right .#{$tooltipWarpPrefixCls}-arrow,
 .#{$tooltipWarpPrefixCls}-rightTop .#{$tooltipWarpPrefixCls}-arrow,
@@ -110,11 +110,11 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     top: 50%;
 }
 .#{$tooltipWarpPrefixCls}-rightTop .#{$tooltipWarpPrefixCls}-arrow {
-    top: 15%;
+    top: 24%;
     margin-top: 0;
 }
 .#{$tooltipWarpPrefixCls}-rightBottom .#{$tooltipWarpPrefixCls}-arrow {
-    bottom: 15%;
+    bottom: 18%;
 }
 .#{$tooltipWarpPrefixCls}-left .#{$tooltipWarpPrefixCls}-arrow,
 .#{$tooltipWarpPrefixCls}-leftTop .#{$tooltipWarpPrefixCls}-arrow,
@@ -136,11 +136,11 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     top: 50%;
 }
 .#{$tooltipWarpPrefixCls}-leftTop .#{$tooltipWarpPrefixCls}-arrow {
-    top: 15%;
+    top: 20%;
     margin-top: 0;
 }
 .#{$tooltipWarpPrefixCls}-leftBottom .#{$tooltipWarpPrefixCls}-arrow {
-    bottom: 15%;
+    bottom: 18%;
 }
 .#{$tooltipWarpPrefixCls}-bottom .#{$tooltipWarpPrefixCls}-arrow,
 .#{$tooltipWarpPrefixCls}-bottomLeft .#{$tooltipWarpPrefixCls}-arrow,
@@ -162,10 +162,10 @@ $tooltipWarpPrefixCls: "xy-tooltip";
     left: 50%;
 }
 .#{$tooltipWarpPrefixCls}-bottomLeft .#{$tooltipWarpPrefixCls}-arrow {
-    left: 15%;
+    left: 22%;
 }
 .#{$tooltipWarpPrefixCls}-bottomRight .#{$tooltipWarpPrefixCls}-arrow {
-    right: 15%;
+    right: 18%;
 }
 
 @keyframes rcToolTipZoomIn {

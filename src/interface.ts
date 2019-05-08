@@ -62,6 +62,11 @@ export interface TooltipProps {
      */
     placement?: PlacementType;
     /**
+     * 包裹元素点击是否触发隐藏
+     * @description 默认true
+     */
+    contentClickHide?: boolean;
+    /**
      * 改变是否可视事件
      */
     onChange?: (visible: boolean) => void;

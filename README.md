@@ -29,25 +29,26 @@ ReactDOM.render(
     <Tooltip overlay={<span>Tips: 这是一个按钮</span>}>
         <button>按钮</button>
     </Tooltip>,
-    container,
+    container
 );
 ```
 
 ## API
 
-| 属性           | 说明                   | 类型                       | 默认值    |
-| -------------- | ---------------------- | -------------------------- | --------- |
-| visible        | 是否可视               | boolean                    | 无        |
-| defaultVisible | 默认是否可视           | boolean                    | 无        |
-| children       | 包裹元素               | React.ReactNode            | 无        |
-| overlay        | 漂浮提示内容           | React.ReactNode            | 无        |
-| popupClassName | 弹出内容类名           | string                     | 无        |
-| placement      | 显示方向               | PlacementType              | 无        |
-| onChange       | 改变是否可视事件       | (visible: boolean) => void | 无        |
-| trigger        | 触发方式               | TriggerAction[]            | ['hover'] |
-| mouseDelay     | 鼠标事件判定延迟       | number                     | 300       |
-| stretch        | 是否宽度与目标宽度对齐 | boolean                    | 无        |
-| alignOption    | 对齐选项               | DomAlignOption             | 无        |
+| 属性             | 说明                     | 类型                       | 默认值    |
+| ---------------- | ------------------------ | -------------------------- | --------- |
+| visible          | 是否可视                 | boolean                    | 无        |
+| defaultVisible   | 默认是否可视             | boolean                    | 无        |
+| children         | 包裹元素                 | React.ReactNode            | 无        |
+| overlay          | 漂浮提示内容             | React.ReactNode            | 无        |
+| popupClassName   | 弹出内容类名             | string                     | 无        |
+| placement        | 显示方向                 | PlacementType              | 无        |
+| onChange         | 改变是否可视事件         | (visible: boolean) => void | 无        |
+| trigger          | 触发方式                 | TriggerAction[]            | ['hover'] |
+| mouseDelay       | 鼠标事件判定延迟         | number                     | 300       |
+| stretch          | 是否宽度与目标宽度对齐   | boolean                    | 无        |
+| contentClickHide | 包裹元素点击是否触发隐藏 | boolean                    | true      |
+| alignOption      | 对齐选项                 | DomAlignOption             | 无        |
 
 ### PlacementType
 
