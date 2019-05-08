@@ -10,6 +10,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     left: {
         points: ["cr", "cl"],
         overflow: autoAdjustOverflow,
+        offset: [-6, 0],
         flipX: "right",
         flipY: "right",
         flipAll: "right"
@@ -17,6 +18,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     right: {
         points: ["cl", "cr"],
         overflow: autoAdjustOverflow,
+        offset: [6, 0],
         flipX: "left",
         flipY: "left",
         flipAll: "left"
@@ -24,6 +26,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     top: {
         points: ["bc", "tc"],
         overflow: autoAdjustOverflow,
+        offset: [0, -6],
         flipX: "bottom",
         flipY: "bottom",
         flipAll: "bottom"
@@ -31,6 +34,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     bottom: {
         points: ["tc", "bc"],
         overflow: autoAdjustOverflow,
+        offset: [0, 6],
         flipX: "top",
         flipY: "top",
         flipAll: "top"
@@ -38,6 +42,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     topLeft: {
         points: ["bl", "tl"],
         overflow: autoAdjustOverflow,
+        offset: [0, -6],
         flipX: "topRight",
         flipY: "bottomLeft",
         flipAll: "bottomRight"
@@ -45,6 +50,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     leftTop: {
         points: ["tr", "tl"],
         overflow: autoAdjustOverflow,
+        offset: [-6, 0],
         flipX: "rightTop",
         flipY: "leftBottom",
         flipAll: "rightBottom"
@@ -52,6 +58,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     topRight: {
         points: ["br", "tr"],
         overflow: autoAdjustOverflow,
+        offset: [0, -6],
         flipX: "topLeft",
         flipY: "bottomRight",
         flipAll: "bottomLeft"
@@ -59,6 +66,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     rightTop: {
         points: ["tl", "tr"],
         overflow: autoAdjustOverflow,
+        offset: [6, 0],
         flipX: "leftTop",
         flipY: "rightBottom",
         flipAll: "leftBottom"
@@ -66,6 +74,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     bottomRight: {
         points: ["tr", "br"],
         overflow: autoAdjustOverflow,
+        offset: [0, 6],
         flipX: "bottomLeft",
         flipY: "topRight",
         flipAll: "topLeft"
@@ -73,6 +82,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     rightBottom: {
         points: ["bl", "br"],
         overflow: autoAdjustOverflow,
+        offset: [6, 0],
         flipX: "leftBottom",
         flipY: "rightTop",
         flipAll: "leftTop"
@@ -80,6 +90,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     bottomLeft: {
         points: ["tl", "bl"],
         overflow: autoAdjustOverflow,
+        offset: [0, 6],
         flipX: "bottomRight",
         flipY: "topLeft",
         flipAll: "topRight"
@@ -87,6 +98,7 @@ export const placements: Partial<Record<PlacementType, DomAlignOption & FlipClas
     leftBottom: {
         points: ["br", "bl"],
         overflow: autoAdjustOverflow,
+        offset: [-6, 0],
         flipX: "rightBottom",
         flipY: "leftTop",
         flipAll: "rightTop"

@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.0 (Wed May 08 2019)
+
+-   更新`xy-manual-tools`
+-   增加偏移, 确保箭头不与元素重叠
+
 ## 0.0.9 (Sun May 05 2019)
 
 -   更新`xy-manual-tools`, 修复编译 demo
