@@ -7,46 +7,46 @@ export default function() {
         <div>
             <div className="demo3">
                 <div style={{ marginLeft: "70px", whiteSpace: "nowrap" }}>
-                    <Tooltip overlay="topLeft" placement="topLeft" trigger={["hover"]}>
+                    <Tooltip popup="topLeft" placement="topLeft" action={["hover"]}>
                         <button className="btn">TL</button>
                     </Tooltip>
-                    <Tooltip overlay="top" placement="top" trigger={["hover"]}>
+                    <Tooltip popup="top" placement="top" action={["hover"]}>
                         <button className="btn">Top</button>
                     </Tooltip>
-                    <Tooltip overlay="topRight" placement="topRight" trigger={["hover"]}>
+                    <Tooltip popup="topRight" placement="topRight" action={["hover"]}>
                         <button className="btn">TR</button>
                     </Tooltip>
                 </div>
                 <div style={{ width: "70px", float: "left" }}>
-                    <Tooltip overlay="leftTop" placement="leftTop" trigger={["hover"]}>
+                    <Tooltip popup="leftTop" placement="leftTop" action={["hover"]}>
                         <button className="btn">LT</button>
                     </Tooltip>
-                    <Tooltip overlay="left" placement="left" trigger={["hover"]}>
+                    <Tooltip popup="left" placement="left" action={["hover"]}>
                         <button className="btn">Left</button>
                     </Tooltip>
-                    <Tooltip overlay="leftBottom" placement="leftBottom" trigger={["hover"]}>
+                    <Tooltip popup="leftBottom" placement="leftBottom" action={["hover"]}>
                         <button className="btn">LB</button>
                     </Tooltip>
                 </div>
                 <div style={{ width: "70px", marginLeft: "304px" }}>
-                    <Tooltip overlay="rightTop" placement="rightTop" trigger={["hover"]}>
+                    <Tooltip popup="rightTop" placement="rightTop" action={["hover"]}>
                         <button className="btn">RT</button>
                     </Tooltip>
-                    <Tooltip overlay="right" placement="right" trigger={["hover"]}>
+                    <Tooltip popup="right" placement="right" action={["hover"]}>
                         <button className="btn">Right</button>
                     </Tooltip>
-                    <Tooltip overlay="rightBottom" placement="rightBottom" trigger={["hover"]}>
+                    <Tooltip popup="rightBottom" placement="rightBottom" action={["hover"]}>
                         <button className="btn">RB</button>
                     </Tooltip>
                 </div>
                 <div style={{ marginLeft: "70px", clear: "both", whiteSpace: "nowrap" }}>
-                    <Tooltip overlay="bottomLeft" placement="bottomLeft" trigger={["hover"]}>
+                    <Tooltip popup="bottomLeft" placement="bottomLeft" action={["hover"]}>
                         <button className="btn">BL</button>
                     </Tooltip>
-                    <Tooltip overlay="bottom" placement="bottom" trigger={["hover"]}>
+                    <Tooltip popup="bottom" placement="bottom" action={["hover"]}>
                         <button className="btn">Bottom</button>
                     </Tooltip>
-                    <Tooltip overlay="bottomRight" placement="bottomRight" trigger={["hover"]}>
+                    <Tooltip popup="bottomRight" placement="bottomRight" action={["hover"]}>
                         <button className="btn">BR</button>
                     </Tooltip>
                 </div>

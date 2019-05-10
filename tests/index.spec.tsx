@@ -8,7 +8,7 @@ describe("Tooltip", () => {
         document.body.append(container);
 
         const wrapper = render(
-            <Tooltip trigger={["click"]} overlay={<span>这是一个按钮</span>} getContainer={() => container}>
+            <Tooltip action={["click"]} popup={<span>这是一个按钮</span>} getContainer={() => container}>
                 <button>按钮</button>
             </Tooltip>,
             { container }

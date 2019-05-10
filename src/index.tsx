@@ -1,101 +1,23 @@
-import classNames from "classnames";
-import React, { useRef, useState } from "react";
-import { alignElement } from "utils-dom";
-import { useControll, useOutsideClick, usePortal, useTranstion, useTriggerChain, TriggerAction, TriggerWrap } from "utils-hooks";
-import { TooltipProps } from "./interface";
-import { getPlacements } from "./placements";
+import React from "react";
+import { TriggerAction } from "utils-hooks/es/Trigger/useTrigger";
+import Trigger from "xy-trigger";
+import { TriggerProps } from "xy-trigger/es/interface";
 
-export function Tooltip(props: TooltipProps) {
-    const {
-        prefixCls = "xy-tooltip",
-        className,
-        popupClassName,
-        style,
-        getContainer,
-        placement = "top",
-        children,
-        overlay,
-        offsetSize = 6,
-        onChange,
-        contentClickHide = false,
-        alignOption,
-        stretch,
-        mouseDelay = 100,
-        trigger = ["hover" as TriggerAction]
-    } = props;
-    const [renderPortal] = usePortal(popupClassName, getContainer);
-    const [visible, setVisible, isControll] = useControll(props, "visible", "defaultVisible", false);
-    const [flip, setFlip] = useState<string>(null);
-    const [ref, state] = useTranstion(visible);
-    const triggerRef = useRef(null);
-    const opening = state.indexOf("en") !== -1;
-    const classString = classNames(prefixCls, className, `${prefixCls}-${flip || placement}`, `${prefixCls}-state-${state}`, { [`${prefixCls}-open`]: opening });
-    const style1: React.CSSProperties = {
-        width: stretch && triggerRef.current ? (triggerRef.current as HTMLElement).clientWidth : null
-    };
+export function Tooltip(props: TriggerProps) {
+    const { prefixCls = "xy-tooltip", placement = "top", action = ["hover" as TriggerAction], popup, ...rest } = props;
 
-    const setActived = useTriggerChain(
-        triggerRef,
-        ref,
-        (act, actived, event) => {
-            doSetVisible(actived);
-        },
-        { trigger, mouseDelay },
-        [flip, visible]
-    );
-
-    useOutsideClick(
-        contentClickHide ? [triggerRef.current] : [ref.current, triggerRef.current],
-        () => {
-            if (visible) {
-                doSetVisible(false);
-                setActived(false);
-            }
-        },
-        [visible]
-    );
-
-    function doSetVisible(_visible: boolean) {
-        if (_visible === visible) {
-            return;
-        }
-
-        if (_visible) {
-            const config = Object.assign({}, getPlacements(offsetSize)[placement], alignOption);
-            const revise = alignElement(ref.current, triggerRef.current, config);
-
-            if (revise.x && !revise.y) {
-                setFlip(config.flipX);
-            } else if (!revise.x && revise.y) {
-                setFlip(config.flipY);
-            } else if (revise.x && revise.y) {
-                setFlip(config.flipAll);
-            } else {
-                setFlip(null);
-            }
-        }
-
-        if (!isControll) {
-            setVisible(_visible);
-        }
-        if (onChange) {
-            onChange(_visible);
-        }
+    function renderPopup() {
+        return (
+            <React.Fragment>
+                <div className={`${prefixCls}-arrow`}>
+                    <div className={`${prefixCls}-arrow-inner`} />
+                </div>
+                <div className={`${prefixCls}-inner`}>{popup}</div>
+            </React.Fragment>
+        );
     }
 
-    return (
-        <React.Fragment>
-            {TriggerWrap(children, triggerRef)}
-            {renderPortal(
-                <div className={classString} style={Object.assign({}, style, style1)} ref={ref}>
-                    <div className={`${prefixCls}-arrow`}>
-                        <div className={`${prefixCls}-arrow-inner`} />
-                    </div>
-                    <div className={`${prefixCls}-inner`}>{overlay}</div>
-                </div>
-            )}
-        </React.Fragment>
-    );
+    return <Trigger {...rest} action={action} placement={placement} prefixCls={prefixCls} popup={renderPopup()} />;
 }
 
-export default React.memo(Tooltip);
+export default Tooltip;

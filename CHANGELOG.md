@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.3 (Fri May 10 2019)
+
+-   使用`xy-trigger`重构
+
 ## 0.1.2 (Wed May 08 2019)
 
 -   修复`contentClickHide`的含义反了
