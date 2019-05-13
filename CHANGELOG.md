@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.4 (Mon May 13 2019)
+
+-   更新依赖
+
 ## 0.1.3 (Fri May 10 2019)
 
 -   使用`xy-trigger`重构
