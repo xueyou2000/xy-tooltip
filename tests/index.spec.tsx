@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "react-testing-library";
+import { render, fireEvent } from "@testing-library/react";
 import Tooltip from "../src";
 
 describe("Tooltip", () => {
@@ -11,7 +11,7 @@ describe("Tooltip", () => {
             <Tooltip action={["click"]} popup={<span>这是一个按钮</span>} getContainer={() => container}>
                 <button>按钮</button>
             </Tooltip>,
-            { container }
+            { container },
         );
 
         const tooltip = container.querySelector(".xy-tooltip");

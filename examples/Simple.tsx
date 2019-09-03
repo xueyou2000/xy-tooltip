@@ -8,7 +8,6 @@ function Mytext(props: { text: string }) {
 
 function Demo(props: { children?: React.ReactNode }) {
     const a = React.Children.only(props.children);
-    console.log(a);
 
     return <span>hehe</span>;
 }

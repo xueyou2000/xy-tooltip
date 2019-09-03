@@ -16,7 +16,7 @@
 
 ```bash
 # yarn
-yarn add xy-tooltip xy-trigger utils-dom utils-hooks classnames
+yarn add xy-tooltip
 ```
 
 ## 使用例子
@@ -29,7 +29,7 @@ ReactDOM.render(
     <Tooltip popup={<span>Tips: 这是一个按钮</span>}>
         <button>按钮</button>
     </Tooltip>,
-    container
+    container,
 );
 ```
 
